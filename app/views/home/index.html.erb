@@ -1,1 +1,13 @@
 <%= link_to "Log Out", log_out_path %>
+<br>
+<%= @error %>
+<br>
+<%= form_for @post do |p| %>
+<%= p.text_area :text, placeholder:"What's on your mind?", size:"70x5"%>
+<br>
+<%= p.submit "Post!"%>
+<% end %>
+<% Post.all.each do |p|%>
+<%= p.text %>
+<br>
+<% end %>
