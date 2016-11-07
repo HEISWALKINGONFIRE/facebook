@@ -13,4 +13,15 @@
 <br>
 <%= p.created_at %>
 <br>
+<% p.comments.each do |c|%>
+<%= c.user.name %>: <%= c.text %>
+<br>
+<% end %>
+
+<br>
+	<%= form_for @comment do |c|%>
+	<%= c.text_field :text %>
+	<%= c.hidden_field :post_id, value:p.id %>
+	<%= c.submit "Comment" %>
+	<% end %>
 <% end %>
