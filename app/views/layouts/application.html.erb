@@ -9,6 +9,10 @@
   </head>
 
   <body>
+<%= link_to "Home", root_path %>
+<%= link_to "Profile", user_path(current_user.id) %>
+<%= link_to "Log Out", log_out_path %>
+<br>
     <%= yield %>
   </body>
 </html>

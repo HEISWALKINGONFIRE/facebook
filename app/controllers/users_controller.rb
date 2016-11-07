@@ -13,6 +13,10 @@ class UsersController < ApplicationController
 			redirect_to :action => "new"
 		end
 	end
+	
+	def show
+		@user = User.find(params[:id])
+	end
 
 	private
 	def valid_user_params
