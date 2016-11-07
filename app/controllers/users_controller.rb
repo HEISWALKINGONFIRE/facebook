@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	skip_before_action :logged_in?, except: [:show]
 	def new
 		@user = User.new
 		@flash = flash[:errors]
