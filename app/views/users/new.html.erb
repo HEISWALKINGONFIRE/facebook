@@ -1,1 +1,19 @@
-See me in Users#new
+Welcome To Facebook!
+<br>
+<% if @flash %>
+	<% @flash.each do |key, value| %>
+	<%= key + " " + value[0] %>
+	<br>
+	<% end %>
+<% end %>
+<%= form_for @user do |u| %>
+<%= u.text_field(:name, placeholder:"Name")%>
+<br>
+<%= u.text_field(:email, placeholder:"Email") %>
+<br>
+<%= u.password_field(:password, placeholder:"Password" )%>
+<br>
+<%= u.password_field(:password_confirmation, placeholder:"Confirm Password" ) %>
+<br>
+<%= u.submit %>
+<% end %>

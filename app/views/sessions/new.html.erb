@@ -1,0 +1,11 @@
+Welcome To Facebook!
+<br>
+<%= @flash %>
+<%= form_for @user, url: {controller:"sessions", action: "create" } do |u| %>
+<%= u.text_field(:email, placeholder:"Email") %>
+<br>
+<%= u.password_field(:password, placeholder:"Password" )%>
+<br>
+<%= u.submit "Log In"%>
+
+<% end %>
