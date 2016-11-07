@@ -1,3 +1,3 @@
 class Friend < ApplicationRecord
-	validates :user_id, :text, presence: true
+	validates :user_id, :friend_id, presence: true
 end
